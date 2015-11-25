@@ -1,0 +1,58 @@
+/* heading tags */
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color: #333399; 
+	font-size: 170%;
+	font-weight: bold} 
+h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color: #FF9900; 
+	font-size: 150%;
+	font-weight: bold} 
+h3 {
+	font-family: Arial, Helvetica, Verdana, sans-serif; 
+	color: #336633; 
+	font-size: %140;
+	font-weight: bold} 
+h4 {
+	font-family: Arial, Helvetica, Verdana, sans-serif; 
+	color: #000000; 
+	font-size: %130;
+	font-weight: regular} 
+
+h2.home  { color: #CC3366; font-family: "Verdana" sans-serif; font-size: 115%}
+
+/* lists */
+dt, li { font-family: Arial;
+     font-size: 18pt;
+     margin-bottom: +10px;
+}
+dd { font-family: Arial;
+     font-size: 16pt;
+     margin-bottom: +15px;
+}
+dl, ol, ul { background-color: #FFFFFF}
+
+/* tables */
+table { background-color: #FFFFFF; } /* one-off because Netscape can't handle tables and lists of same color on same page */
+table.topbar { background-color: #FFFFFF; }
+table.content { background-color: #FFFFFF; }
+table.menu { background-color: #FFFFFF; }
+table.menuandcontent { background-color:#FFFFFF } 
+table.list { padding:4px }
+
+/* links */
+a.menu { color: #FFFFFF; font-weight: bold; text-decoration: none;}
+
+/* global classes */
+.altcolor { background-color: #DDDDDD } /* Table and list alternate color */
+
+/* other tags */
+body { background-color: #FFFFFF; }
+A:link { color:#003399; }
+A:visited { color:#660099; }
+A:hover { color:#FF3300; }
+
+P,PRE { font-family: Arial;
+    font-size: 18pt;
+}

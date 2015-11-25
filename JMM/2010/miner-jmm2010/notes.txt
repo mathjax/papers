@@ -1,0 +1,127 @@
+* This talk is about the architecture of MOW
+  - to date, MOW has been about building a platform
+  - now the MOW tech stack is finally gelling
+  - the questions and challenges will increasingly be on using the technology stack
+  - the story of cut and paste draws is a good illustration
+
+* Knowledge creation and reuse takes place within an information architecture
+  - information architecture is driven laragely by technology
+  - it is a mix of planning and concensus, and organic "market" forces
+  - new technologies are generally added to old ones, rather than
+    replacing them, but architectures are more volatile
+
+* Examples:
+  - pre-electronic math and science was firmly embedded in a print-based
+    information that developed in the 1600s in response to the enabling
+    technology of the press
+    * authors wrote manuscripts and letters, 
+    * institutions of peer review developed
+    * knowledge was persisted, discovered and reused via libraries
+    * the publishing industry arose to provide the glue.
+
+  - In the 70s and 80s, the advent of electronic documents provoke a shift
+    in information architecture
+    * several rival implementations arose in differen ecosystems, e.g.
+      "Office" in business vs TeX in the academic mathematics community
+    * authors needed new skills to use software to create electronic documents
+    * the institutions surrounding pre-prints grew and fostered collaboration,
+      and threatened aspects of peer review and journal publication
+    * libraries and publishers continued to play their roles, but under strain.
+
+  - Since the 90s a web-based information architecture has been developing
+    * Authors continue to create electronic documents, now in an XML-based
+      environment. Conversion comes to the forefront as an issue.
+    * Knowledge is persisted, discovered and reused through networks and agents
+    * Networked communication and collaboration arose, and some new institutions
+      seem to be emerging, implications unknown.
+    * libraries and publisher continue under strain, seeking to adapt
+      to emerging institutions while preserving relevant aspects of
+      old ones, verdict unknown.
+
+* The information architecture for MOW has taken a long time to come together,
+  because it is ambitious:
+  - All kinds of electronic documents to fit into the network architecture
+    with minimal incremental cost, and we want to reuse the information
+    with minimal incremental cost.
+  - We want the resulting networked documents to carry more information:
+    accessibility, semantic information for calculation and retrieval,
+    dynamic resizeable display, internationalization
+  - Requiring extensive technical skills from authors is unstable, and
+    requiring more is unrealistic.
+
+* While bits and pieces of this architecture have been emerging for years, a
+  critical mass of widely-available functionality is only now pulling into site.
+  - The XML bit was filled in a decade ago by MathML. In pure XML contexts, it
+    has been successful: XML publishing workflows, MS Office + MIP, DAISY, HTML5
+  - With the upcoming publication of MathML 3 and related specifications, the
+    standardization task is really complete.
+  - Rich semantics are a subject of active research, but stubbed in enough to
+    demonstrate feasibility: CAS import/export, accessibility, search
+  - Easy authoring has sort of been there for a while via conversion, which 
+    has seen a lot of active research and development. 
+  - The missing piece has been display in browsers
+  - as a consequence, most scientific web content has been published in a hodge podge of
+    conceptually inferior but practically superior formats.
+
+* The display problem is nearly finished
+  - This has been a 
+  - Native browser implementation continues, availability of fonts helps a lot, but
+    may or may not be reliable over time.
+  - HTML5 may help a bit more
+  - image-based technologies like Google charts, mathtran, and a million variants
+    are now widely-deployed and will continue to be used as a LCD fallback
+  - MathJax could clobber the problem.
+
+* The MathJax approach has these conceptual advantages
+  - It leverages the emergent "winner" of browser extension technologies: 
+    HTML+CSS+JavaScript, and thus has that critical "it just works" property
+  - On the assumption that platform will be stable for a long while to
+    come, MathJax can provide a stable front-end interface to evolving
+    browser technologies (webfonts, HTML5, native implementation,
+    server-based image servers, etc.)
+  - It is compatible with both easy authoring, and information-rich, structured
+    data.
+
+=====================================================================================
+
+
+
+* The XML architecture of MOW is essentially complete
+    - Standards
+    - Unicode, Fonts
+    - Authoring tools
+    - Conversion tools
+    - Publishing tools
+    - Display
+    --------------------
+    - Computation
+    - Accessibility
+    - Discovery and Reuse
+  
+* Now all that's missing is the content!
+    - Display was the last piece, but that is critical!
+    - Lesson of the display problem: avoid chicken and egg situations
+      * unless the content will "work," it is hard to justify creating any
+      * unless there is content, it is hard to justify better support
+
+* Only a couple things are mandatory for MOW to "just work"
+    - universal display without reader effort
+    - easy, in-context authoring
+    - image-based methods satisfy these, and are fairly widespread
+      (wikipedia, Google Docs, all the PDFs in DLs, etc)
+    - MathJax does too, but there isn't much deployed content
+
+* A bunch of others have appeal, but aren't always dealbreakers
+    - accessibility
+    - search
+    - calculation
+    - conversion back and forth to legacy formats
+    - image-based methods can't provide these as a rule, and MathJax mostly does 
+      or could, but there isn't enough content for these to have much mindshare
+
+* Copy and paste reuse is on the cusp
+    - with the rise of cloud computing, users no longer live within a few key
+      applications (e.g. TeX, MS Office)
+    - Cut and paste interoperability between apps is correspondingly more important
+    
+====================

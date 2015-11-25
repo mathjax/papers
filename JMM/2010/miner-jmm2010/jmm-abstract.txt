@@ -1,0 +1,27 @@
+1056-N5-1504 Robert R Miner* (robertm@dessci.com), 413 Wacouta Street, Suite 540, Saint Paul, MN
+55101. MathType, Math Markup, and the Goal of Cut and Paste.
+
+One consequence of the rise of the Web as an information source and
+application platform is the expectation of easy reuse. The ability to
+cut and paste text data between web pages and applications greatly
+enhances the utility of both the source and target. This presentation
+examines the state of the art for cut and paste of mathematical
+notation in Web pages.
+
+For display, most math on the web is represented in a relatively
+unstructured way, e.g. as an image. By contrast, the applications that
+are most naturally the targets of mathematical paste operations
+generally require highly structured representations. However, the rise
+of important web applications such as blogs and wikis have made the
+association of equation images with more structured representations in
+metadata more common. Such data is most often a TeX-like
+language. Conversely, efforts to standardize exchange formats for
+mathematics, particularly MathML, have seen steadily increasing
+support in target applications. The combination of these factors now
+allows software tools, such as Design Science's MathType, to cut and
+paste mathematics naturally between a surprising variety of sources
+and targets.
+
+(Received September 22, 2009)
+
+
