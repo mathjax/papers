@@ -1,0 +1,42 @@
+Accessibility Features for Advanced Mathematics in the new MathJax Version 3
+
+MathJax is a Javascript library for TeX-like typesetting of Mathematics on the
+web. Since its beginnings one of its goals is to provide accessibility support
+for blind and visual impaired people; either by supporting third party assistive
+technology or, more recently, via it's own integrated accessibility extension.
+
+In MathJax's new version 3 the accessibility extension is not only again an
+important aspect but has been considerably improved in terms of the information
+it can provide on formulas. With support from the Simons Foundation we developed
+improved semantic recognition of source material as well as means to exploit
+context information in documents. One particular emphasis is to provide better
+accessibility to advanced mathematical material exploiting information gained
+from the original LaTeX code, to provide more appropriate speech for different
+areas of Mathematics but also for subjects like Physics, Chemistry and Logic.
+Our aim is to ease the study of mathematics for more people with visual
+impairments as well as to encourage subject specialists to contribute via better
+authored content, semantically meaningful LaTeX packages, and expert knowledge
+for speech generation.
+
+----------------------
+
+With more and more mathematical teaching material being made available online,
+its accessible representation is a major concern. And while formulas on the web
+can be represented in MathML, no major browser completely implements this
+standard. Consequently the MathJax library that provides a solution to render
+Mathematics in any browser, has become a quasi-standard for displaying
+Mathematics on the web.
+
+As MathJax has undergone a major reimplementation effort over the last two years
+we will present the accessibility features provided in the new version, which
+include:
+
+* Automatic voicing of formulas
+* Interactive navigation with synchronised highlighting
+* Different collections of speech rules like MathSpeak and ClearSpeak
+* Nemeth Braille output
+
+We will also demonstrate how mathematical teaching material can be converted
+into web documents renderable with MathJax, and how the preservation of the
+original LaTeX sources can lead to an improved accessibility experience.
+
