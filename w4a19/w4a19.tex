@@ -82,12 +82,12 @@
   Accessibility of mathematics is still a challenging problem and providing the
   right level of support to a reader depends on many factors, such as their
   particular assistive technology needs, their level of expertise, and the
-  subject area they are working in. We present work towards making maths
+  subject area they are working in. We present work towards making math
   accessibility more adaptable to the reader's personal needs that is
   implemented in the MathJax library for rendering mathematics on the web. While
   MathJax provided accessibility support for several years, the new version 3
-  has both more new features and means of personalisation. In particular, it
-  provides adaptable combinations of highlighting, colorisation, and
+  has both more new features and means of personalization. In particular, it
+  provides adaptable combinations of highlighting, colorization, and
   magnification techniques. Both Braille and speech output can be generated,
   with different speech rule sets allowing readers to flexibly change
   presentation and adaptation for improved interpretation of formulas in
@@ -100,7 +100,7 @@
 \section{Introduction}
 
 Assistive technology support for mathematical expressions has always been a
-challenging problem that is characterised by a number of often competing
+challenging problem that is characterized by a number of often competing
 affordances and requirements: There exist multiple markup languages in which to
 represent formulas, even in the same markup language multiple ways exist to
 describe a given formula, readers often have different assistive technology
@@ -118,7 +118,7 @@ high-school curricula.
 Modern web technology offers the possibility to combine these features in a
 single medium by augmenting DOM structure with custom data on alternative format
 information without altering visual representation. In
-MathJax~\cite{MathJax2.7}, a Javascript library for TeX-quality typesetting of
+MathJax~\cite{MathJax2.7}, a JavaScript library for TeX-quality typesetting of
 Mathematics on the web, we have exploited this approach since version 2.7 to
 provide an accessibility extension that aims to give flexible support for
 readers visual and print impairments (i.e., readers with cognitive disorders
@@ -132,7 +132,7 @@ expressions given in presentation MathML.
 
 In this paper we present, how embedded semantics is employed to provide a number
 of assistive technology features in MathJax, with a particular emphasis on
-features new to version 3 and personalisation aspects, that exploit SRE's
+features new to version 3 and personalization aspects, that exploit SRE's
 advanced features like Braille generation, adaptations for reading style and to
 subject areas, like Physics, Chemistry, and Logic.
 
@@ -291,7 +291,7 @@ One of the main challenges to produce useful assistive technology support in
 MathJax is the lack of semantic information in most standard mathematical markup
 notations. Formulas are usually given in format that are geared towards visual
 representations, such as {\LaTeX}, ASCIIMath, or MathML, with {\LaTeX} being
-clearly prevalent on the majority of webpages. Similarly, MathJax was originally
+clearly prevalent on the majority of web pages. Similarly, MathJax was originally
 designed exclusively for displaying formulas, offering a number of different
 rendering solutions, such as HTML with CSS or SVG output.
 Figure~\ref{fig:semantic-tree} presents two standard ways of representing the
@@ -359,7 +359,7 @@ techniques.  Firstly, a description of an entire formula is given in the ARIA
 label at the top level of the DOM structure representing the expression.
 Figure~\ref{fig:rendered} demonstrates the ARIA label embedding as well as the
 use of a custom data attribute for speech. The latter allows us to aurally
-render not only the entire formula but each of its subexpressions, which is
+render not only the entire formula but each of its sub-expressions, which is
 exploited during user interaction with the formula, as discussed below.  For
 this purpose, MathJax introduces a dedicated assertive ARIA live region into the
 DOM and updates it with the desired speech output. Content changes in the live region
@@ -376,7 +376,7 @@ output using Unicode Braille symbols. It currently supports translation of
 expressions into Nemeth Braille~\cite{nemeth1972nemeth} only, but we plan to support
 additional Math Braille styles in the future. In MathJax we can make use of this
 feature by computing Nemeth output as a further rendering mode in parallel to
-visiual and speech output.
+visual and speech output.
 
 Unfortunately, there is currently no easy way to get tactile output to the user
 during regular reading, as most screen readers translate text internally into
@@ -384,7 +384,7 @@ Braille, which is not necessarily helpful for Mathematics that needs specific
 Braille formats. In particular there is no way to inject Braille directly into
 alt text or aria labels for screen readers to simply pick it up and pass it on.
 However, during user interaction with a formula, MathJax takes control so that
-Braille content can be exposed. This is similar to speech: The unicode Braille
+Braille content can be exposed. This is similar to speech: The Unicode Braille
 is simply pushed into a second live region which can be picked up by a screen
 reader that directly pushes it onto a connected Braille display.
 
@@ -392,21 +392,19 @@ reader that directly pushes it onto a connected Braille display.
 
 \subsection{Visual Aids}
 
-Since MathJax has full control over the rendering of a mathematical expression
-in the browser, it can offer a number of assistive techniques based on visual
-alteration and enhancement of formulae. While these are mainly geared towards
-supporting readers with low vision or other print impairments like dyslexia,
-they can also help a general audience in improved understanding for formulas and
-their structure.
+MathJax also offers a number of assistive techniques based on visual alteration
+and enhancement of formulae. While these are mainly geared towards supporting
+readers with low vision or other print impairments like dyslexia, they can also
+help a general audience to improve understanding formulas and their structure.
 
 \myparagraph{Highlighting and Contrast} Math expressions generally are large
-collections of mostly unconnected symbols in a two-dimensional layout that can
+collections of mostly unconnected symbols in a two-dimensional layout, which can
 be particularly daunting for readers with dyslexia.  Reading comprehension can
 be supported, however, by a choice of high-contrast
 colors~\cite{rello2012optimal} and selective
 highlighting~\cite{jones2008strategies}. We realize this in MathJax by offering
 changes of fore- and background colors, and selective highlighting of
-sub-expressions of a complex formula. In the case of the former, the entire
+sub-expressions. In the case of the former, the entire
 formula is simply colored to simulate a colored overlay to provide high-contrast
 in itself or to offset it from the surrounding text.  For the latter, we again
 exploit the semantic structure of the formula to provide a more meaningful
@@ -437,26 +435,25 @@ examples see~\cite{cervone2016towards}), for large or complex formulas and
 equation systems, abstraction can often significantly simplify the visual
 appearance, leading to less cognitive load for a reader, as well as a better
 understanding of the basic structure of an expression. In addition, abstractions
-can aid in producing concise speech descriptions via summarisation of formulas
+can aid in producing concise speech descriptions via summarizing of formulas
 or parts thereof. This can be particularly important for presenting formulas
 inline in mathematical texts, where a reader might want to understand the whole
 text without having their reading flow constantly interrupted by every formula
 being spoken in minute detail. In addition, visual abstraction can be helpful in
-presenting mathmatics on small form factor displays by adapting formulas to the
+presenting mathematics on small form factor displays by adapting formulas to the
 page reflow to avoid the need for left right panning of a page.
 
 
-\myparagraph{Formula Colouring}
+\myparagraph{Formula Coloring}
 An alternative means to providing support to readers with print impairments is
 to heighten the contrast of elements within a formula itself. This effectively
-amounts to offsetting neighbouring symbols as much as possible with contrasting
+amounts to offsetting neighboring symbols as much as possible with contrasting
 colors. While this could be done in a linear fashion, exploiting the semantic
 tree structure allows for a similar effect while also offering the possibility
 of retaining the same or similar colors for the same or similar operations. A
-tree colouring example for the quadratic equation is given below:
+tree Coloring example for the quadratic equation is given below:
 \[\color{blue}a \color{OliveGreen}x^2 \color{red}+ \color{blue}b
   \color{OliveGreen}x \color{red}+ \color{blue}c \color{black}= \color{magenta}0\]
-
 \myparagraph{Magnification}
 While changing contrasts can already help low-vision users, many rely on screen
 magnification to read content.  MathJax supports magnification in multiple ways:
@@ -490,7 +487,7 @@ During this exploration, many of the previously described features can be
 restricted to sub-expressions as well. Speech strings can be
 computed for all sub-expressions and voiced by updating the ARIA live region
 introduced in the DOM. Similarly highlighting as well as magnification can be
-synchronised to the exploration using CSS techniques.
+synchronized to the exploration using CSS techniques.
 
 It is important to note that the walking is not done in a linear
 ``left-to-right'' fashion, but instead follows the embedded semantic tree
@@ -502,61 +499,99 @@ single summands from left to right, and so on.  Note also that this
 ensures that the user experience of exploring a structure is the same regardless
 of the specific renderer used even though their underlying DOM trees differ.
 In addition to this, MathJax also provides the ability to
-query the position of elements in a formula, means to summarise the expression currently
-highlighted, cursor virtualisation, as well as special navigation modes for
+query the position of elements in a formula, means to summarize the expression currently
+highlighted, cursor virtualization, as well as special navigation modes for
 matrices and equation systems.
 
 
-\section{Adaptation and Personalisation}
+\section{Adaptation and Personalization}
 \label{sec:challenges}
 
-\subsection{Altering Speech}
+While MathJax always supported personalization of the accessibility extension,
+for example by enable choice of fore- and background colors for highlighting or
+determining the size of magnification, the new version 3 will have a greater
+emphasis on adaptation to personal needs and content. We will summarize a few:
 
-MathSpeak~\cite{MathSpeak} vs ClearSpeak~\cite{frankel2016development}
+\myparagraph{Pick and Mix} One goal is to provide compatible accessibility
+components so they can be flexibly combined.  For example, users can have both
+speech and Braille output or combine goal-directed magnification with
+exploration and highlighting, where either can be done in a different
+contrasting colors. This will allow for a pick and mix strategy that a reader
+can tailor towards their individual needs.
 
-Example: Quadratic formula
+\myparagraph{Altering Speech} Another features is to switch alternative speech
+output even during interaction. We particular concentrate on two alternatives:
+MathSpeak~\cite{MathSpeak} and ClearSpeak~\cite{frankel2016development} provided
+by SRE. As example, consider the quadratic formula, i.e., the solution to the
+quadratic equation we have used so far:
+\[x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}\] Its MathSpeak translation is \emph{``x
+  equals StartFraction negative b plus-or-minus StartRoot b squared minus 4 a c
+  EndRoot Over 2 a EndFraction''}, while the corresponding ClearSpeak is
+\emph{``x equals the fraction with numerator negative b plus or minus the square
+  root of b squared minus 4 a c and denominator 2 a''}.  We see that the former
+uses more disambiguating language, which makes it more suitable for large,
+complex expressions, while the latter provides a more natural speech experience.
+The ability to swap the way an expression is spoken will allow readers multiple
+views to ease comprehension.
 
-\subsection{Domain Specific Semantics}
+\myparagraph{Domain Specific Semantics} A second way to improve speech and
+understanding is to enable more domain specific interpretations for different
+mathematical areas and subjects like Physics, Chemistry and Logic. This can be
+achieved in two ways: Automatically, by MathJax pushing relevant information it
+has obtained from {\LaTeX} input formulas to SRE, which can exploit this
+information with domain specific heuristics. Since these heuristics are often
+incompatible they normally do not fire unless explicitly chosen by a user by
+manually setting a domain.
 
-\begin{itemize}
-\item Domain specific interpretation from {\LaTeX}
-\item Domain adaptation by choice of heuristics
-\item Example: Bra-ket notation.
-\end{itemize}
+For example consider the following expression from physics:
+\[\langle \phi |A|\psi \rangle\]
+The formula is in so called bra-ket notation, which expresses vectors and linear
+functionals in quantum mechanics. Regular MathSpeak output would be \emph{``left
+  angle bracket phi StartAbsoluteValue upper A EndAbsoluteValue psi right angle
+  bracket''}, which in the context of physics is wrong, as $A$ is a matrix and
+$\phi,\psi$ are vectors. If this expressions stem from a {\LaTeX} formula using
+\texttt{physics} or \texttt{braket} packages, or the physics heuristics are
+explicitly switched on SRE will produce \emph{``the linear operator A acting on
+  bra phi and on ket psi''} instead. However, using the heuristic in a
+non-physics can lead to misinterpretation of the meaning and nesting structure
+of angle brackets and vertical bars.
+
+
+% \begin{itemize}
+% \item For expressions entered in {\LaTeX} format we can provide better
+%   accessibility by information gained from the original {\LaTeX} code, to
+%   provide more appropriate speech for different areas of Mathematics, but also
+%   for subjects like Physics  Our aim is to ease the study
+%   of mathematics for more people with visual impairments, as well as to
+%   encourage subject specialists to contribute via better authored content,
+%   semantically meaningful {\LaTeX} packages, and expert knowledge for speech
+%   generation.
+
+
+% \item Domain adaptation by choice of heuristics
+% \item Example: Bra-ket notation.
+% \end{itemize}
+
+% subject areas, like Physics, Chemistry, and inference rules in Logic.
 
 
 
 \section{Conclusions}
 \label{sec:conc}
 
-\edbf{Rewrite entirely or just point to future work.}
-
-We have presented the new accessibility features of MathJax that aim to
-transform MathJax into a universal rendering solution supporting all readers,
-regardless of their assistive needs. The features are based on a improved semantic
-enrichment procedure for Presentation MathML, which not only ensures a uniform
-user experience across platforms and output formats, but also shows promise
-for more advanced AT techniques in the future. Some of these features are available
-as extensions to MathJax version~2, but all will be included as part of the core
-distribution for MathJax version~3.
-
-Although we have not yet had the opportunity to do extensive user testing, since
-our code is developed publicly on our GitHub repository, we have already had
-some user feedback, in particular from specialists, where initial reactions have
-been positive. Additional end-user testing was enligthening: users struggled 
-with lack of live-regions support in their AT and the complexity of the 
-application. Feedback indicates that options for additional speech styles and 
-semantics will be beneficial. 
-We spent a significant effort on
-technical testing in order to make the solution compatible with the most common
-assistive technology solutions, and
-strongly believe that these experiences and
-observed shortcomings should serve as a foundation for the future development
-of standards, tools, and general accessibility solutions for STEM content on the
-web. 
+The presented novel accessibility features of MathJax are currently in beta
+testing, but will be available as an option with the full version 3 release. One
+particular emphasis is on ease of personalization by providing flexibly
+combinable assistive technology components. A second, equally important aspect
+of our work is enable better support for advanced notation to support
+practitioners in many mathematical areas. This is an area that has often been
+neglected due to an emphasis on high-school mathematics in many approaches. But
+the possibility to better exploit content authored in semantically meaningful
+{\LaTeX} in MathJax and complement with appropriate heuristics and speech in SRE
+should help us to make progress in this area.
 
 
-\subsection*{Acknowledgements}
+\subsection*{Acknowledgments}
 We thank the Simons Foundation for support on advanced semantic recognition, the
 Big Ten Academic Alliance for funding Nemeth Braille in SRE, and the
 Sloan foundation for supporting the initial accessibility extension in v2.7.
