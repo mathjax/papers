@@ -90,7 +90,7 @@
   provides adaptable combinations of highlighting, colorization, and
   magnification techniques. Both Braille and speech output can be generated,
   with different speech rule sets allowing readers to flexibly change
-  presentation and adaptation for improved interpretation of formulas in
+  presentation and adaptation for better interpretation of formulas in
   different subject areas, like Physics, Chemistry, and Logic.
 \end{abstract}
 
@@ -102,29 +102,29 @@
 Assistive technology support for mathematical expressions has always been a
 challenging problem that is characterized by a number of often competing
 affordances and requirements: There exist multiple markup languages in which to
-represent formulas, even in the same markup language multiple ways exist to
-describe a given formula, readers often have different assistive technology
-needs, they have different levels of expertise, or work with material from
+represent formulas; even in the same markup language multiple ways exist to
+describe the same formula; readers often have different assistive technology
+needs; they have different levels of expertise; or work with material from
 different subject areas.
 
-Consequently, a number of technology solutions have experimented with over time
-to support different aspects of the problem. From software for generating Math
+Consequently, a number of technology solutions have experimented over time with
+support for different aspects of the problem. From software for generating Math
 Braille~\cite{maddox2007mathematical}, over dedicated screen readers that work
 on different input languages~\cite{raman1994aster,soiffer2005mathplayer}, to
-tools for dyslexia support~\cite{equatio}, etc. Some of these systems also
-support different areas of mathematics although mainly geared towards
-high-school curricula.
+tools for dyslexia support~\cite{equatio}. Some of these systems also support
+different areas of mathematics although mainly geared towards high-school
+curricula.
 
-Modern web technology offers the possibility to combine these features in a
+Modern web technology offers the possibility to combine multiple features into a
 single medium by augmenting DOM structure with custom data on alternative format
 information without altering visual representation. In
 MathJax~\cite{MathJax2.7}, a JavaScript library for TeX-quality typesetting of
 Mathematics on the web, we have exploited this approach since version 2.7 to
 provide an accessibility extension that aims to give flexible support for
-readers visual and print impairments (i.e., readers with cognitive disorders
-like dyslexia)~\cite{cervone2016towards}.  Although MathJax can render the three
-most common markup language for Mathematics ({\LaTeX}, ASCIIMath, MathML),
-none of these has sufficient semantic information to allow for sufficient
+readers with visual and print impairments (i.e., readers with cognitive
+disorders like dyslexia)~\cite{cervone2016towards}.  Although MathJax can render
+the three most common markup language for Mathematics ({\LaTeX}, ASCIIMath,
+MathML), none of these has sufficient semantic information to allow for adequate
 accessibility support. Consequently MathJax relies on an improved semantic
 interpretation of formulas, which is provided by the Speech Rule Engine
 (SRE)~\cite{SRE}, a system that provides speech generation for mathematical
@@ -133,7 +133,7 @@ expressions given in presentation MathML.
 In this paper we present, how embedded semantics is employed to provide a number
 of assistive technology features in MathJax, with a particular emphasis on
 features new to version 3 and personalization aspects, that exploit SRE's
-advanced features like Braille generation, adaptations for reading style and to
+advanced features like Braille generation, adaptations for reading style and
 subject areas, like Physics, Chemistry, and Logic.
 
 
@@ -289,7 +289,7 @@ down]
 
 One of the main challenges to produce useful assistive technology support in
 MathJax is the lack of semantic information in most standard mathematical markup
-notations. Formulas are usually given in format that are geared towards visual
+notations. Formulas are usually given in formats that are geared towards visual
 representations, such as {\LaTeX}, ASCIIMath, or MathML, with {\LaTeX} being
 clearly prevalent on the majority of web pages. Similarly, MathJax was originally
 designed exclusively for displaying formulas, offering a number of different
@@ -338,7 +338,7 @@ practices.
 
 The assistive technology extension that we have built for MathJax is mainly
 aimed at supporting users with reading disorders, such as dyslexia, and visual
-impairments. However, some aspects if it could also be used as a general aid for
+impairments. However, some aspects of it could also be used as a general aid for
 readers unfamiliar with the content or for learners at different levels. We
 summarize the main features in this section.
 
@@ -346,13 +346,11 @@ summarize the main features in this section.
 
 One main emphasis of the assistive technology extension is to support
 screen-reader users, but make them independent of their particular
-screen-reader's Math capabilities. MathJax exploits the features of the
-speech-rule engine~\cite{Sorge14,SRE} that generates the initial semantic-tree
-transformation to also provide aural rendering for mathematical
-expressions. Speech-string computation is based on the embedded semantic
-tree. Speech strings for a formula are either generated on the fly when running
-MathJax in a browser client, or pre-computed by a page author, e.g.,
-if formulas are embedded as pre-rendered elements into a page.
+screen-reader's Math capabilities. MathJax exploits SRE's feature to provide
+aural rendering for mathematical expressions. Speech string computation is based
+on the embedded semantic tree. Speech strings for a formula are either generated
+on the fly when running MathJax in a browser client, or pre-computed by a page
+author, when formulas are pre-rendered and inserted into the DOM.
 
 To expose the speech strings to a screen reader, MathJax uses two main
 techniques.  Firstly, a description of an entire formula is given in the ARIA
@@ -420,7 +418,7 @@ numerator of a fraction only. For permanent highlighting, the opaqueness of the
 background gradually increases in nested sub-expressions. Nevertheless, in large
 expressions, highlighting is of limited utility in getting an overview of the structure
 of a formula; to aid this further, we introduce a technique for
-structural abstraction in the next section.
+structural abstraction.
 
 \myparagraph{Structural Abstraction}
 The idea of structural abstraction is to assist readers by simplifying the
@@ -441,7 +439,7 @@ inline in mathematical texts, where a reader might want to understand the whole
 text without having their reading flow constantly interrupted by every formula
 being spoken in minute detail. In addition, visual abstraction can be helpful in
 presenting mathematics on small form factor displays by adapting formulas to the
-page reflow to avoid the need for left right panning of a page.
+page reflow to avoid the need for excessive panning in a page.
 
 
 \myparagraph{Formula Coloring}
@@ -494,12 +492,12 @@ It is important to note that the walking is not done in a linear
 structure. Thus starting with the entire expression, the next lower level
 consists, for instance in the case of the quadratic equation, of the sum on the
 left hand side of the equation, the equality sign and the $0$ on the right.  The
-sum can then be further explored allowing the reader to then step through the
-single summands from left to right, and so on.  Note also that this
-ensures that the user experience of exploring a structure is the same regardless
-of the specific renderer used even though their underlying DOM trees differ.
-In addition to this, MathJax also provides the ability to
-query the position of elements in a formula, means to summarize the expression currently
+sum can then be further explored allowing the reader to step through the single
+summands from left to right, and so on.  Note also that navigating the semantic
+tree ensures that the user experience of exploring a structure is the same
+regardless of the specific renderer used even though their underlying DOM trees
+differ.  In addition to this, MathJax also provides the ability to query the
+position of elements in a formula, means to summarize the expression currently
 highlighted, cursor virtualization, as well as special navigation modes for
 matrices and equation systems.
 
@@ -508,7 +506,7 @@ matrices and equation systems.
 \label{sec:challenges}
 
 While MathJax always supported personalization of the accessibility extension,
-for example by enable choice of fore- and background colors for highlighting or
+for example by individual choice of fore- and background colors for highlighting or
 determining the size of magnification, the new version 3 will have a greater
 emphasis on adaptation to personal needs and content. We will summarize a few:
 
@@ -523,24 +521,24 @@ can tailor towards their individual needs.
 output even during interaction. We particular concentrate on two alternatives:
 MathSpeak~\cite{MathSpeak} and ClearSpeak~\cite{frankel2016development} provided
 by SRE. As example, consider the quadratic formula, i.e., the solution to the
-quadratic equation we have used so far:
+quadratic equation we have used as example so far:
 \[x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}\] Its MathSpeak translation is \emph{``x
   equals StartFraction negative b plus-or-minus StartRoot b squared minus 4 a c
   EndRoot Over 2 a EndFraction''}, while the corresponding ClearSpeak is
 \emph{``x equals the fraction with numerator negative b plus or minus the square
-  root of b squared minus 4 a c and denominator 2 a''}.  We see that the former
+  root of b squared minus 4 a c and denominator 2 a''}.  We see that MathSpeak
 uses more disambiguating language, which makes it more suitable for large,
-complex expressions, while the latter provides a more natural speech experience.
+complex expressions, while ClearSpeak provides a more natural speech experience.
 The ability to swap the way an expression is spoken will allow readers multiple
 views to ease comprehension.
 
 \myparagraph{Domain Specific Semantics} A second way to improve speech and
 understanding is to enable more domain specific interpretations for different
-mathematical areas and subjects like Physics, Chemistry and Logic. This can be
+mathematical areas and subjects like Physics, Chemistry and Logic. This is
 achieved in two ways: Automatically, by MathJax pushing relevant information it
 has obtained from {\LaTeX} input formulas to SRE, which can exploit this
 information with domain specific heuristics. Since these heuristics are often
-incompatible they normally do not fire unless explicitly chosen by a user by
+incompatible they would normally not fire unless explicitly chosen by a user by
 manually setting a domain.
 
 For example consider the following expression from physics:
@@ -583,12 +581,12 @@ The presented novel accessibility features of MathJax are currently in beta
 testing, but will be available as an option with the full version 3 release. One
 particular emphasis is on ease of personalization by providing flexibly
 combinable assistive technology components. A second, equally important aspect
-of our work is enable better support for advanced notation to support
-practitioners in many mathematical areas. This is an area that has often been
+of our work is to enable better support for advanced notation to help
+practitioners in many mathematical fields. This is an area that has often been
 neglected due to an emphasis on high-school mathematics in many approaches. But
 the possibility to better exploit content authored in semantically meaningful
 {\LaTeX} in MathJax and complement with appropriate heuristics and speech in SRE
-should help us to make progress in this area.
+should help us to make progress on this problem.
 
 
 \subsection*{Acknowledgments}
