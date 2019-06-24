@@ -1,0 +1,62 @@
+<mjx-container class="MathJax" jax="CHTML" display="true" hasspeech="true" tabindex="1">
+  <mjx-math type="relseq" role="equality" id="16" children="15,10" content="9" display="true" class="MJX-TEX" speech-en="a x squared plus b x plus c equals 0" speech="a x squared plus b x plus c equals 0">
+    <mjx-mrow type="infixop" role="addition" id="15" children="12,14,8" content="4,7" parent="16" speech="a x squared plus b x plus c">
+      <mjx-mrow type="infixop" role="implicit" annotation="clearspeak:unit" id="12" children="0,3" content="11" parent="15" speech="a x squared">
+        <mjx-mi class="mjx-i" type="identifier" role="latinletter" font="italic" annotation="clearspeak:simple" id="0" parent="12" speech="a">
+          <mjx-c c="a">
+          </mjx-c>
+        </mjx-mi>
+        <mjx-mo class="mjx-n" type="operator" role="multiplication" id="11" parent="12" added="true" operator="infixop,⁢" speech="times">
+          <mjx-c c="2062">
+          </mjx-c>
+        </mjx-mo>
+        <mjx-msup type="superscript" role="latinletter" id="3" children="1,2" parent="12" speech="x squared">
+          <mjx-mi class="mjx-i" type="identifier" role="latinletter" font="italic" annotation="clearspeak:simple" id="1" parent="3" speech="x" prefix="Base">
+            <mjx-c c="x">
+            </mjx-c>
+          </mjx-mi>
+          <mjx-script style="vertical-align: 0.413em;">
+            <mjx-mn class="mjx-n" size="s" type="number" role="integer" font="normal" annotation="clearspeak:simple" id="2" parent="3" speech="2" prefix="Exponent">
+              <mjx-c c="2">
+              </mjx-c>
+            </mjx-mn>
+          </mjx-script>
+        </mjx-msup>
+      </mjx-mrow>
+      <mjx-mo class="mjx-n" space="3" type="operator" role="addition" id="4" parent="15" operator="infixop,+" speech="plus">
+        <mjx-c c="+">
+        </mjx-c>
+      </mjx-mo>
+      <mjx-mrow space="3" type="infixop" role="implicit" annotation="clearspeak:simple;clearspeak:unit" id="14" children="5,6" content="13" parent="15" speech="b x">
+        <mjx-mi class="mjx-i" type="identifier" role="latinletter" font="italic" annotation="clearspeak:simple" id="5" parent="14" speech="b">
+          <mjx-c c="b">
+          </mjx-c>
+        </mjx-mi>
+        <mjx-mo class="mjx-n" type="operator" role="multiplication" id="13" parent="14" added="true" operator="infixop,⁢" speech="times">
+          <mjx-c c="2062">
+          </mjx-c>
+        </mjx-mo>
+        <mjx-mi class="mjx-i" type="identifier" role="latinletter" font="italic" annotation="clearspeak:simple" id="6" parent="14" speech="x">
+          <mjx-c c="x">
+          </mjx-c>
+        </mjx-mi>
+      </mjx-mrow>
+      <mjx-mo class="mjx-n" space="3" type="operator" role="addition" id="7" parent="15" operator="infixop,+" speech="plus">
+        <mjx-c c="+">
+        </mjx-c>
+      </mjx-mo>
+      <mjx-mi class="mjx-i" space="3" type="identifier" role="latinletter" font="italic" annotation="clearspeak:simple" id="8" parent="15" speech="c">
+        <mjx-c c="c">
+        </mjx-c>
+      </mjx-mi>
+    </mjx-mrow>
+    <mjx-mo class="mjx-n" space="4" type="relation" role="equality" id="9" parent="16" operator="relseq,=" speech="equals">
+      <mjx-c c="=">
+      </mjx-c>
+    </mjx-mo>
+    <mjx-mn class="mjx-n" space="4" type="number" role="integer" font="normal" annotation="clearspeak:simple" id="10" parent="16" speech="0">
+      <mjx-c c="0">
+      </mjx-c>
+    </mjx-mn>
+  </mjx-math>
+</mjx-container>

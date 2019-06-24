@@ -1,0 +1,19 @@
+Accessibility Features for Advanced Mathematics in the new MathJax Version 3
+
+MathJax is a Javascript library for TeX-like typesetting of Mathematics on the
+web. Since its beginnings one of its goals is to provide accessibility support
+for blind and visual impaired people; either by supporting third party assistive
+technology or, more recently, via it's own integrated accessibility extension.
+
+In MathJax's new version 3 the accessibility extension is not only again an
+important aspect but has been considerably improved in terms of the information
+it can provide on formulas. With support from the Simons Foundation we developed
+improved semantic recognition of source material as well as means to exploit
+context information in documents. One particular emphasis is to provide better
+accessibility to advanced mathematical material exploiting information gained
+from the original LaTeX code, to provide more appropriate speech for different
+areas of Mathematics but also for subjects like Physics, Chemistry and Logic.
+Our aim is to ease the study of mathematics for more people with visual
+impairments as well as to encourage subject specialists to contribute via better
+authored content, semantically meaningful LaTeX packages, and expert knowledge
+for speech generation.
