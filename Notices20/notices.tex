@@ -120,10 +120,33 @@ features, and the most flexibility in controlling MathJax’s actions.
 
 Making mathematics accessible to readers with disabilities has been an
 important feature that distinguishes MathJax from other math-rendering
-solutions. ...
-
-
-
+solutions. While originally aimed to work with third party assistive
+technology software of the time, since version 2.7 MathJax also offers
+its own accessibility solution that is meant to work independently of
+browser, operating system and assistive technology solutions (e.g.,
+screen readers) a user employs. The extension offers for readers with
+special needs in particular those with visual impairments (e.g.,
+blindness or low vision) or cognitive impairments (e.g., dyslexia or
+dyscalculia). The accessibilty extension uses the speech rule
+engine~\cite{SRE} library for translating mathematical expressions
+into speech strings. Its core feature comprise the automatic voicing
+of formulas together with their interactive navigation, synchronised
+highlighting and an abstraction feature that allows for visual
+simplification and summary speech description of formulas.  These
+features have not only been ported to MathJax v3, but greatly
+extended, making use of v3 new modular setup to allow for a flexible
+pick-and-mix style personalization of accessibility tools.  In
+particular, MathJax now offers a number of different rule sets for
+voicing mathematics, that can be pre-selected or switched on the
+fly. That is, during interactive exploration a reader can choose
+another rule set, resulting in a different way an expression is
+spoken, thus providing a different view on the expression.  Low vision
+support has been improved by enabling magnification not only for an
+entire formula, but also for sub-expressions during interaction. A
+further emphasis is to provide better accessibility to advanced
+mathematical material exploiting information gained from the original
+LaTeX code, to generate more appropriate speech for different areas of
+Mathematics but also for subjects like Physics, Chemistry and Logic.
 
 Although MathJax originally was intended as a stop-gap measure until
 browsers implemented native math rendering (through MathML), after
@@ -190,6 +213,9 @@ accessible mathematics available on the web for the next ten years.
 
 \bibitem{StackExchange}
   StackExchange, \url{https://stackexchange.com/}.
+
+\bibitem{SRE}
+  Speech Rule Engine, \url{https://speechruleengine.org}.
 
 \bibitem{Typescript}
   Typescript, \url{https://www.typescriptlang.org}.
