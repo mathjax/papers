@@ -6,7 +6,6 @@
 \usepackage{graphicx}
 \usepackage{verbatim}
 
-
 %%% DPVC>
 %%%   define some macros to make things easier
 %%% 
@@ -92,20 +91,21 @@ comparisons, but in tests that render a complete page with several
 hundred expressions, we see a reduction in rendering time of between
 60 and 80 percent, depending on the browser and operating system.
 
-A key feature in v3 is the ability to run MathJax synchronously, and
+MathJax v2 also used its own loading mechanism for accessing its
+components, which did not work well with modern Javascript packaging
+systems like webpack \cite{webpack} or rollup \cite{rollup}.  Version
+3 resolves that problem, so it can interoperate better with modern web
+workflows. One can make custom single-file builds of MathJax, or
+include it as one component of a larger asset file.
+
+One key feature in v3 is the ability to run MathJax synchronously, and
 in particular, to provide a function that can translate an input
 string (say a TeX expression) into an output DOM tree (say an SVG
 image) \cite{MJ-convert}. This was not easy in version 2, since its
 operation was inherently asynchronous. With MathJax 3.0, this is
-straight-forward, both within the page, and for individual
-expressions.
-
-MathJax v2 used its own loading mechanism for accessing its
-components, which did not work well with modern Javascript packaging systems
-like webpack \cite{webpack} or rollup \cite{rollup}.  Version 3
-resolves that problem, so it can interoperate better with modern web
-workflows. One can make custom single-file builds of MathJax, or
-include it as one component of a larger asset file.
+straight-forward and can be applied to both individual expressions as
+well as entire documents. It is particuarly important for the
+preparation of rendered documents for offline consumption.
 
 MathJax was designed originally for use in a web browser, but this
 left unaddressed the desire to pre-process mathematics on a
