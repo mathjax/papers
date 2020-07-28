@@ -5,6 +5,7 @@
 
 \usepackage{graphicx}
 \usepackage{verbatim}
+\usepackage{hyperref}
 
 %%% DPVC>
 %%%   define some macros to make things easier
@@ -17,7 +18,7 @@
 }
 \def\Caption#1{\caption{\leftskip=3em\rightskip=\leftskip\small #1\hfill\null}}
 \def\URL#1{\hbox{\def~{\lower.2em\hbox{\char`\~}}\tt#1}}
-\def\url#1{{\small$\left<\URL{#1}\right>$}}
+% \def\url#1{{\small$\left<\URL{#1}\right>$}}
 \def\dash{\kern.15em---\hskip.15em\ignorespaces}
 %%% <DPVC
 
@@ -166,16 +167,17 @@ MathJax would not have been possible.  The version 3 rewrite puts
 MathJax in a strong position to continue to make beautiful and
 accessible mathematics available on the web for the next ten years.
 
+\small
 \begin{thebibliography}{99}
 
 \bibitem{ES6}
   ECMAScript 2020, \url{http://ecma-international.org/ecma-262/}.
 
 \bibitem{ES6-class}
-  ES6 classes, \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes}.
+  ES6 classes, \url{https://developer.mozilla.org/Web/JavaScript/Reference/Classes}.
   
 \bibitem{ES6-promise}
-  ES6 promises, \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Promise}.
+  ES6 promises, \url{https://developer.mozilla.org/Web/JavaScript/Reference/Global\_Objects/Promise}.
 
 \bibitem{MJ}
   MathJax home page, \url{https://www.mathjax.org}.
