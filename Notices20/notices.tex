@@ -31,7 +31,7 @@
 \maketitle
 
 At the Joint Mathematics Meetings in January of 2010, we announced
-version 1.0 of the MathJax javascript library for displaying typeset
+version 1.0 of the MathJax Javascript library for displaying typeset
 mathematics in web pages.  Almost immediately, MathJax became the
 de-facto standard for including mathematics on the web.  It is used in
 a wide range of on-line journals, including the AMS's own MathSciNet
@@ -45,23 +45,23 @@ screen readers, and similar products \cite{MJ-use}.
 
 In the ten years since its initial introduction, MathJax has expanded
 to include {\TeX} and {\LaTeX}, MathML, and AsciiMath input formats
-\cite{MJ-input}, and severl output formats, including HTML-with-CSS,
+\cite{MJ-input}, and several output formats, including HTML-with-CSS,
 SVG (scalable vector graphics), and MathML \cite{MJ-output}.  The
 introduction of sophisticated semantic enrichment and
 speech-generation functionality in June 2016 \cite{MJ-accessibility}
 has made MathJax a crucial component in generating web pages and
 e-books that are accessible to readers with visual impairments who use
 assistive technology like screen readers or Braille output devices.
-MathJax can make your on-line course materials or published research
+MathJax can make on-line course materials or published research
 accessible, which is of growing importance in this age of distance
 learning.
 
 Much has changed in web technology since MathJax was first introduced.
-New web libraries and improvements to the javascript language itself
+New web libraries and improvements to the Javascript language itself
 have changed the way web-page designers want to use MathJax, and some
 of the approaches built into MathJax in its early days made it hard to
 use MathJax in modern web-page workflows.  For the past three years,
-MathJax has been undergoing a complete rewrite form the ground up,
+MathJax has been undergoing a complete rewrite from the ground up,
 with the goal of modernizing MathJax’s internal infrastructure,
 bringing it more flexibility for use with contemporary web
 technologies, making it easier to use for pre-processing and
@@ -69,19 +69,18 @@ server-side support, and making the production of typeset mathematics
 faster.  The release of MathJax version 3.0 in August 2019 brought
 these hopes to fruition \cite{MJ3}.
 
-In order to make MathJax easier to maintain, version 3 is written in
-the Typescript language \cite{Typescript}, a version of javascript
-that includes information about the type of information stored in each
-variable and returned by each function.  This allows errors to be
-found much earlier, leads to more reliable code that is easier to
-understand (and so easier for others to contribute to the MathJax).
-It also allows us to use new features of javascript that are part of
-the ES6 standard \cite{ES6}, while still supporting older browsers
-that don't implement them.  So, for example, we can take advantage of
-ES6 promises \cite{ES6-promise} rather than MathJax v2's custom
-signals, queues, and callbacks that many found difficult to use, and
-ES6's modern class structure \cite{ES6-class} rather than the
-non-standard approach found in v2.
+In order to make MathJax easier to maintain, version 3 is written in the
+Typescript language \cite{Typescript}, a version of Javascript that allows for
+adding types to variables and functions that can be checked by a compiler for
+correctness.  This enables errors to be found much earlier, leads to more
+reliable code that is easier to understand and consequently makes it easier for
+others to contribute to MathJax.  It also allows us to use new features of
+Javascript that are part of the latest ES6 standard \cite{ES6}, while still
+supporting older browsers that do not implement them.  So, for example, we can
+take advantage of ES6 promises \cite{ES6-promise} rather than MathJax v2's
+custom signals, queues, and callbacks that many found difficult to use, and
+ES6's modern class structure \cite{ES6-class} rather than the non-standard
+approach found in v2.
 
 The new internal design for v3 removed some performance issues that
 were inherent in the design of v2, improving the rendering speed of
@@ -100,7 +99,7 @@ straight-forward, both within the page, and for individual
 expressions.
 
 MathJax v2 used its own loading mechanism for accessing its
-components, which did not work well with javascript packaging systems
+components, which did not work well with modern Javascript packaging systems
 like webpack \cite{webpack} or rollup \cite{rollup}.  Version 3
 resolves that problem, so it can interoperate better with modern web
 workflows. One can make custom single-file builds of MathJax, or
@@ -121,7 +120,8 @@ features, and the most flexibility in controlling MathJax’s actions.
 
 Making mathematics accessible to readers with disabilities has been an
 important feature that distinguishes MathJax from other math-rendering
-solutions.  ... [Volker]
+solutions. ...
+
 
 
 
