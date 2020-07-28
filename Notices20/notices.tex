@@ -76,19 +76,21 @@ correctness.  This enables errors to be found much earlier, leads to more
 reliable code that is easier to understand and consequently makes it easier for
 others to contribute to MathJax.  It also allows us to use new features of
 Javascript that are part of the latest ES6 standard \cite{ES6}, while still
-supporting older browsers that do not implement them.  So, for example, we can
-take advantage of ES6 promises \cite{ES6-promise} rather than MathJax v2's
-custom signals, queues, and callbacks that many found difficult to use, and
-ES6's modern class structure \cite{ES6-class} rather than the non-standard
-approach found in v2.
+supporting older browsers that do not implement them.
+So, for example we now use ES6's modern class structure \cite{ES6-class}
+and take advantage of asynchronous features like promises \cite{ES6-promise}.
+As these features were not available 10 years ago, v2 implemented its
+own object system and provided custom signals, queues, and callbacks
+for asynchronous operation.
 
-The new internal design for v3 removed some performance issues that
-were inherent in the design of v2, improving the rendering speed of
-MathJax.  Because the two versions operate so differently, it is
-difficult to make precise comparisons, but in tests that render a
-complete page with several hundred expressions, we see a reduction in
-rendering time of between 60 and 80 percent, depending on the browser
-and operating system.
+V3's modern ES6 features, which can be exploited by modern Javascript
+interpreters for run-time optimization, together with its new internal
+design removed some performance issues that were inherent in the
+design of v2, improving the rendering speed of MathJax.  Because the
+two versions operate so differently, it is difficult to make precise
+comparisons, but in tests that render a complete page with several
+hundred expressions, we see a reduction in rendering time of between
+60 and 80 percent, depending on the browser and operating system.
 
 A key feature in v3 is the ability to run MathJax synchronously, and
 in particular, to provide a function that can translate an input
